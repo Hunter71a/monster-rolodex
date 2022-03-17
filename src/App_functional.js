@@ -4,10 +4,10 @@ import CardList from './components/card-list/card-list.component';
 import SearchBox from './components/search-box/search-box.component';
 
 import './App2.css';
-import userEvent from '@testing-library/user-event';
 
 const App = () => {
   const [searchField, setSearchField] = useState('');
+  const [title, setTitle] = useState('');
   const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilteredMonsters] = useState(monsters);
 
@@ -27,6 +27,11 @@ const App = () => {
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLowerCase();
     setSearchField(searchFieldString);
+  };
+
+  const onTitleChange = (event) => {
+    const searchFieldString = event.target.value.toLowerCase();
+    setTitle(searchFieldString);
   };
 
   return (
